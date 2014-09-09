@@ -1,6 +1,5 @@
 #!/bin/bash
 hashfile="/root/bin/passcrack/227/hashes"
-
 for line in $(cat ${hashfile}); do 
   export smbhash=$(echo $line | awk -F: '{print $3 ":" $4}') 
   export smbuser=$(echo $line | awk -F: '{print $1}') 
